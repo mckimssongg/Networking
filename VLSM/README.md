@@ -3,7 +3,7 @@
 ## Task Description
 
 The Variable Length Subnet Masking (VLSM) task involves dividing a single Class C IP address space into multiple subnets based on the number of hosts required for each subnet. This is a common practice in IP networking to efficiently utilize the available IP address space.
-
+![Alt text](Red.png)
 ### Requirements
 
 - **Base Network**: 116.11.9.0/24
