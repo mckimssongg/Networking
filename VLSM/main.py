@@ -5,6 +5,13 @@ import math
 def needed_host_bits(number_of_hosts):
     return math.ceil(math.log2(number_of_hosts + 2))  # +2 por la dirección de red y broadcast
 
+# Función alternativa para calcular el número mínimo de bits necesarios para soportar una cantidad de hosts
+def needed_host_bits_alternative(number_of_hosts):
+    bits = 0
+    while (2 ** bits) < (number_of_hosts + 2):  # +2 por la dirección de red y broadcast
+        bits += 1
+    return bits
+
 # Función para calcular las subredes ajustada para manejar correctamente la asignación de la siguiente subred
 def calculate_subnets_corrected(base_network, subnets):
     # Ordenar las subredes de mayor a menor
@@ -58,4 +65,4 @@ subnets_info = [
 
 # Calcular las subredes con la función corregida
 vlsm_subnets_corrected = calculate_subnets_corrected(base_network, subnets_info)
-vlsm_subnets_corrected
+print(vlsm_subnets_corrected)
